@@ -1,0 +1,5 @@
+.home__container{
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    width: 100%;
+}
