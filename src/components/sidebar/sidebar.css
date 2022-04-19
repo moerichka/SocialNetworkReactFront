@@ -20,14 +20,19 @@
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-    transition: 0.7s;
+    transition: var(--transition);
     padding: 0.5rem;
     border-radius: 0.7rem;
+    color: white;
 }
 
 .sidebar__listItem:hover{
     background-color: var(--bg-color);
     transform: scale(1.05);
+}
+
+.sidebar__listItem:active{
+    transform: translateY(0.1rem)
 }
 
 .sidebar__hr{

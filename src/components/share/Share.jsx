@@ -9,7 +9,7 @@ function Share() {
       <div className="share__wrapper">
         <div className="share__top">
           <img
-            src="/assets/person1.jpg"
+            src="/assets/person/person1.jpg"
             alt=""
             className="share__profileImage"
           />

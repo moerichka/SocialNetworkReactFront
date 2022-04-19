@@ -2,6 +2,8 @@ import React from "react";
 import "./online.css";
 
 function Online(props) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <>
       <li className={props.rightbar ? "friend-column" : "friend"}>
@@ -10,7 +12,7 @@ function Online(props) {
             className={
               props.rightbar ? "friend__image-rightangle" : "friend__image"
             }
-            src={props.profilePicture}
+            src={PF + props.profilePicture}
             alt=""
           />
           {!props.rightbar && <span className="friend__online"></span>}

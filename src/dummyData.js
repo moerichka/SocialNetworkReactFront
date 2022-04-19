@@ -1,32 +1,32 @@
 export const Users = [
     {
         id: 1,
-        profilePicture: "assets/person/person1.jpg",
+        profilePicture: "person/person1.jpg",
         username: "Анни Рейц"
     },
     {
         id: 2,
-        profilePicture: "assets/person/person2.jpg",
+        profilePicture: "person/person2.jpg",
         username: "Кьоруко Ко"
     },
     {
         id: 3,
-        profilePicture: "assets/person/person1.jpg",
+        profilePicture: "person/person1.jpg",
         username: "Анни Рейц"
     },
     {
         id: 4,
-        profilePicture: "assets/person/person2.jpg",
+        profilePicture: "person/person2.jpg",
         username: "Кьоруко Ко"
     },
     {
         id: 5,
-        profilePicture: "assets/person/person1.jpg",
+        profilePicture: "person/person1.jpg",
         username: "Анни Рейц"
     },
     {
         id: 6,
-        profilePicture: "assets/person/person2.jpg",
+        profilePicture: "person/person2.jpg",
         username: "Кьоруко Ко"
     },
 ]
@@ -35,7 +35,7 @@ export const Posts = [
     {
         id: 1,
         desc: "Это мой первый пост, просто хотел с вами этим поделиться",
-        img: "assets/post/post1.jpg",
+        img: "post/post1.jpg",
         date: "5 минут назад",
         userId: 1,
         like: 31,
@@ -44,7 +44,7 @@ export const Posts = [
     {
         id: 2,
         desc: "Дарова там, зацените мой аккаунт",
-        img: "assets/post/post2.jpg",
+        img: "post/post2.jpg",
         date: "10 минут назад",
         userId: 2,
         like: 100500,
@@ -53,10 +53,19 @@ export const Posts = [
     {
         id: 3,
         desc: "Дafsdfasаккаунт",
-        img: "assets/post/post2.jpg",
+        img: "post/post2.jpg",
         date: "10 минут назад",
         userId: 2,
         like: 100500,
         comment: 1200
+    },
+    {
+        id: 4,
+        desc: "lox",
+        img: "post/post2.jpg",
+        date: "10 минут назад",
+        userId: 2,
+        like: 4,
+        comment: 4
     },
 ]

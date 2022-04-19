@@ -40,8 +40,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
     --bg-color-input: hsla(0, 100%, 100%, 1);
     --bg-notification: hsla(0, 100%, 50%, 1);
     --color: hsla(0, 100%, 100%, 1);
-    --bg-color-login: hsla(160, 90%, 75%, 1);
+    /* --bg-color-login: hsla(160, 90%, 75%, 1); */
+    --bg-color-login: hsla(180, 30%, 50%, 1);
     --bg-color-login-2: hsla(180, 30%, 50%, 1);
 
     --topbar-height: 4rem;
+
+    --transition: 0.3s;
 }

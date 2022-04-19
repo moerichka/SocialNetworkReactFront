@@ -9,33 +9,49 @@ import { Users } from "../../dummyData";
 
 function Rightbar(props) {
   const ProfileRightBar = () => {
+    const user = { ...props.user };
+
     return (
       <div className="rightbar__userInfo">
         <h4 className="rightbar__title">Информация о пользователе:</h4>
         <div className="rightbar__info">
-          <div className="rightbar_infoItem">
-            <div className="rightbar_infoName">Город:</div>
-            <div className="rightbar_infoValue">Челябинск</div>
-          </div>
-          <div className="rightbar_infoItem">
-            <div className="rightbar_infoName">Школа:</div>
-            <div className="rightbar_infoValue">МАОУ СОШ №148</div>
-          </div>
-          <div className="rightbar_infoItem">
-            <div className="rightbar_infoName">Класс:</div>
-            <div className="rightbar_infoValue">9</div>
-          </div>
-          <div className="rightbar_infoItem">
-            <div className="rightbar_infoName">Интересы:</div>
-            <div className="rightbar_infoValue">
-              Аниме, Музыка, Видеогейминг
+          {user.city && (
+            <div className="rightbar_infoItem">
+              <div className="rightbar_infoName">Город:</div>
+              <div className="rightbar_infoValue">{user.city}</div>
             </div>
-          </div>
+          )}
+          {user.school && (
+            <div className="rightbar_infoItem">
+              <div className="rightbar_infoName">Школа:</div>
+              <div className="rightbar_infoValue">{user.school}</div>
+            </div>
+          )}
+          {user.class && (
+            <div className="rightbar_infoItem">
+              <div className="rightbar_infoName">Класс:</div>
+              <div className="rightbar_infoValue">{user.class}</div>
+            </div>
+          )}
+          {!!user.interests?.length && (
+            <div className="rightbar_infoItem">
+              <div className="rightbar_infoName">Интересы:</div>
+              <div className="rightbar_infoValue">
+                {!user.interests ? (
+                  <span>Пока нету(</span>
+                ) : (
+                  user.interests.map((interest) => {
+                    return <span key={interest}>{interest}</span>;
+                  })
+                )}
+              </div>
+            </div>
+          )}
         </div>
         <h4 className="rightbar__title">Друзья пользователя:</h4>
         <ul className="rightbar__friendList">
           {Users.map((u) => (
-            <Online key={u.id} {...u} rightbar/>
+            <Online key={u.id} {...u} rightbar />
           ))}
         </ul>
       </div>
@@ -57,7 +73,7 @@ function Rightbar(props) {
   return (
     <div className="rightbar">
       <div className="rightbar__wrapper">
-        {props.profile ? <ProfileRightBar /> : <HomeRightBar />}
+        {props.user ? <ProfileRightBar /> : <HomeRightBar />}
       </div>
     </div>
   );

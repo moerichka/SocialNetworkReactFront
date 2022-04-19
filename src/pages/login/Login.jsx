@@ -1,7 +1,12 @@
-import React from "react";
+import { useRef } from "react";
 import "./login.css";
 
+import { Link } from "react-router-dom";
+
 function Login() {
+  const email = useRef();
+  const password = useRef();
+
   const subminHundler = (e) => {
     e.preventDefault();
   };
@@ -21,20 +26,27 @@ function Login() {
             <input
               type="text"
               name="email"
+              required
               className="login__input"
               placeholder="Email"
+              ref={email}
             />
             <input
               type="password"
               name="password"
+              required
+              minLength="6"
               className="login__input"
               placeholder="Пароль"
+              ref={password}
             />
             <button className="login__button">Войти</button>
           </form>
           <div className="login__otherOptions">
             <span className="login__forgotPass">Забыли пароль?</span>
-            <button className="login__button">Создать новый аккаунт</button>
+            <Link to="/register">
+              <button className="login__button">Создать новый аккаунт</button>
+            </Link>
           </div>
         </div>
       </div>

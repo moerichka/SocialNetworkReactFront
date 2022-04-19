@@ -25,6 +25,10 @@
     justify-content: space-around;
 }
 
+.topbar__link{
+    color: var(--color);
+}
+
 .topbar__logo {
     font-size: 1.8rem;
     font-weight: bold;

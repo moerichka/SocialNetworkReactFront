@@ -41,6 +41,11 @@
     gap: 0.5rem;
 }
 
+.rightbar_infoValue{
+    display: flex;
+    gap: 0.4rem;
+}
+
 .rightbar_infoName{
     font-size: 1.2rem;
     font-weight: 500;
