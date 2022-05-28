@@ -1,0 +1,29 @@
+.navigationgrid {
+    width: min-content;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(5, min-content);
+    gap: 1rem;
+    background-color: var(--bg-color-gray);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.navelement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    background-color: var(--bg-color-login);
+    transition: var(--transition);
+}
+
+.navelement:hover{
+    background-color: var(--bg-color-login-3);
+}
+
+a {
+    color: var(--white);
+}

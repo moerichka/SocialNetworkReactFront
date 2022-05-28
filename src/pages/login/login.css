@@ -93,6 +93,10 @@
     transition: 0.7s;
 }
 
+.login__button:disabled{
+    cursor: not-allowed;
+}
+
 .login__form > .login__button{
     align-self: center;
     width: 100%;

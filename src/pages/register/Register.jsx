@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./register.css";
 
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Register() {
-  const subminHundler = (e) => {
+  const navigate = useNavigate();
+
+  const username = useRef();
+  const name = useRef();
+  const surname = useRef();
+  const email = useRef();
+  const password = useRef();
+  const passwordAgain = useRef()
+
+  const passwordAgainHandler = () =>{
+    passwordAgain.current.setCustomValidity('');
+  }
+
+  const subminHundler = async (e) => {
     e.preventDefault();
+
+    if (password.current.value !== passwordAgain.current.value) {
+      passwordAgain.current.setCustomValidity("Пароли не сопадают");
+      return
+    } else {
+      passwordAgain.current.setCustomValidity('');
+    }
+
+    const user = {
+      username: username.current.value,
+      name: name.current.value,
+      surname: surname.current.value,
+      email: email.current.value,
+      password: password.current.value,
+    };
+    try {
+      const res = await axios.post('/auth/register', user)
+      navigate("/login");
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
 
   return (
@@ -22,22 +58,28 @@ function Register() {
           <form onSubmit={subminHundler} className="register__form">
             <input
               type="text"
-              name="surname"
+              name="username"
               className="register__input"
               placeholder="Никнейм"
+              ref={username}
+              required
             />
             <div className="register__nameWrapper">
               <input
                 type="text"
-                name="Name"
+                name="name"
                 className="register__input"
                 placeholder="Имя"
+                ref={name}
+                required
               />
               <input
                 type="text"
-                name="LastName"
+                name="surname"
                 className="register__input"
                 placeholder="Фамилия"
+                ref={surname}
+                required
               />
             </div>
             <input
@@ -45,18 +87,27 @@ function Register() {
               name="email"
               className="register__input"
               placeholder="Email"
+              ref={email}
+              required
             />
             <input
               type="password"
               name="password"
               className="register__input"
               placeholder="Пароль"
+              ref={password}
+              required
+              minLength={6}
             />
             <input
               type="password"
               name="password-again"
               className="register__input"
               placeholder="Повторите пароль"
+              ref={passwordAgain}
+              onChange={passwordAgainHandler}
+              required
+              minLength={6}
             />
             <button className="register__button">Зарегестрироваться</button>
           </form>

@@ -2,7 +2,7 @@
     width: 100%;
     border-radius: 0.8rem;
     border: 2px solid var(--bg-color);
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 .post__wrapper {
@@ -22,8 +22,8 @@
 }
 
 .post__profileImage {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     object-fit: cover;
 }

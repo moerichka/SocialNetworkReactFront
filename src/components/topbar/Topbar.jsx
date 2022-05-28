@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./topbar.css";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import Select from "react-select";
+import { createOptions } from "../../helpers/arrayFun";
+import axios from "axios";
 
 import SearchIcon from "@mui/icons-material/Search";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -9,12 +12,28 @@ import ChatIcon from "@mui/icons-material/Chat";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 
 const Topbar = () => {
-  const [searchQuerry, setSearchQuerry] = React.useState("");
+  const [chosenFriend, setChosenFriend] = useState(null);
+  const [users, setUsers] = useState([]);
+  const { user } = useContext(UserContext);
+  const navigate = useNavigate();
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
-  const changeHandler = (event) => {
-    const { name, value } = event.target;
-    setSearchQuerry(value);
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const res = await axios.get("/users/getall");
+        setUsers(res.data);
+      } catch (error) {
+        console.log("error: ", error);
+      }
+    };
+    getUsers();
+  }, []);
+
+  const usersOptions = users?.length > 1 && createOptions(users, "username", "_id");
+
+  const selectHandler = (selected) => {
+    setChosenFriend(selected);
   };
 
   return (
@@ -26,21 +45,30 @@ const Topbar = () => {
       </div>
       <div className="topbar__center">
         <div className="topbar__searchbar">
-          <SearchIcon />
-          <input
+          <SearchIcon className="topbar__search" onClick={()=>navigate(`/profile/${chosenFriend.value}`)}/>
+          {/* <input
             type="text"
             className="topbar__searchInput"
             placeholder="Поиск друзей или контента"
             value={searchQuerry}
             onChange={changeHandler}
             name="searchInput"
+          /> */}
+          <Select
+            placeholder="Найти пользователя"
+            options={usersOptions}
+            classNamePrefix="topbar"
+            className="topbar__searchInput"
+            defaultValue={chosenFriend}
+            value={chosenFriend}
+            onChange={selectHandler}
           />
         </div>
       </div>
       <div className="topbar__right">
         <div className="topbar__links">
-          <span className="topbar__link">Домашняя страница</span>
-          <span className="topbar__link">Новости</span>
+          {/* <span className="topbar__link">Домашняя страница</span>
+          <span className="topbar__link">Новости</span> */}
         </div>
         <div className="topbar__icons">
           <div className="topbar__iconItem">
@@ -56,11 +84,13 @@ const Topbar = () => {
             <span className="topbar__iconBadge">2</span>
           </div>
         </div>
-        <img
-          src={PF + "person/person1.jpg"}
-          alt=""
-          className="topbar__image"
-        />
+        <Link to={`/profile/${user._id}`}>
+          <img
+            src={`${PF}${user.profilePicture || "/person/no-avatar.png"}`}
+            alt=""
+            className="topbar__image"
+          />
+        </Link>
       </div>
     </div>
   );

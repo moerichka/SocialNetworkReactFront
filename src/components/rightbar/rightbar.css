@@ -58,3 +58,36 @@
     gap: 1rem;
 }
 
+.rightbar__buttonsWrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.rightbar__followBut{
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--color);
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.rightbar__followBut:hover{
+    background-color: var(--bg-color-hover);
+}
+
+.unfollow{
+    background-color: transparent;
+    border: 2px solid var(--bg-color);
+}
+
+.unfollow:hover{
+    background-color: var(--bg-notification-easy);
+}

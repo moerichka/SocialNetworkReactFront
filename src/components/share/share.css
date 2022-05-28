@@ -54,10 +54,33 @@
     cursor: pointer;
 }
 
+.share__fileInput{
+    display: none;
+}
+
 .share__button{
     padding: 0.6rem;
     border-radius: 0.3rem;
     border: 1px solid var(--bg-color);
     background-color: transparent;
     color: var(--color);
+}
+
+.share__imageContainer{
+    position: relative;
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.share__imageCancel{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem !important;
+}
+
+.share__image{
+    max-width: 100%;
 }

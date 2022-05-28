@@ -19,16 +19,6 @@ export const Users = [
         profilePicture: "person/person2.jpg",
         username: "Кьоруко Ко"
     },
-    {
-        id: 5,
-        profilePicture: "person/person1.jpg",
-        username: "Анни Рейц"
-    },
-    {
-        id: 6,
-        profilePicture: "person/person2.jpg",
-        username: "Кьоруко Ко"
-    },
 ]
 
 export const Posts = [

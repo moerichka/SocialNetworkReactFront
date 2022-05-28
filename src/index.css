@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
+ 
 /* ---nullification--- */
 *{padding: 0; margin: 0; border: 0;}
 *,*:before,*:after{-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
@@ -35,14 +35,20 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 :root{
     --bg-color-main: hsla(250, 60%, 5%, 1);
     --bg-color: hsla(270, 80%, 60%, 1);
+    --bg-color-hover: hsla(270, 80%, 65%, 1);
     --bg-color-contrast: hsla(190, 80%, 60%, 1);
+    --bg-color-contrast-2: hsla(190, 80%, 35%, 1);
+    --bg-color-contrast-3: hsla(270, 80%, 35%, 1);
     --bg-color-second: hsla(270, 80%, 30%, 1);
+    --bg-color-gray: hsla(270, 40%, 30%, 0.2);
     --bg-color-input: hsla(0, 100%, 100%, 1);
     --bg-notification: hsla(0, 100%, 50%, 1);
+    --bg-notification-easy: hsla(0, 100%, 30%, 1);
     --color: hsla(0, 100%, 100%, 1);
-    /* --bg-color-login: hsla(160, 90%, 75%, 1); */
+    --color-02: hsla(0, 100%, 100%, 0.2);
     --bg-color-login: hsla(180, 30%, 50%, 1);
     --bg-color-login-2: hsla(180, 30%, 50%, 1);
+    --bg-color-login-3: hsla(160, 90%, 60%, 1);
 
     --topbar-height: 4rem;
 

@@ -1,15 +1,27 @@
 import { useRef } from "react";
 import "./login.css";
+import { loginCall } from "../../apiCalls";
 
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Login() {
   const email = useRef();
   const password = useRef();
+  const { user, isFetching, error, dispatch } = useContext(UserContext);
 
   const subminHundler = (e) => {
     e.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
   };
+
+  console.log(user);
 
   return (
     <div className="login">
@@ -40,13 +52,19 @@ function Login() {
               placeholder="Пароль"
               ref={password}
             />
-            <button className="login__button">Войти</button>
+            <button className="login__button" disabled={isFetching}>
+              {isFetching ? <CircularProgress color="secondary" /> : "Войти"}
+            </button>
           </form>
           <div className="login__otherOptions">
             <span className="login__forgotPass">Забыли пароль?</span>
-            <Link to="/register">
-              <button className="login__button">Создать новый аккаунт</button>
-            </Link>
+            <button className="login__button" disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress color="secondary" />
+              ) : (
+                "Создать новый аккаунт"
+              )}
+            </button>
           </div>
         </div>
       </div>

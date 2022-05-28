@@ -34,12 +34,12 @@ function Profile() {
             <div className="profile__cover">
               <img
                 className="profile__coverImage"
-                src={`${PF}${user.coverPicture || "person/no-bg-3.png"}`}
+                src={`${PF}${user.coverPicture || "/person/no-bg-3.png"}`}
                 alt=""
               />
               <img
                 className="profile__userAvatar"
-                src={`${PF}${user.profilePicture || "person/no-avatar.png"}`}
+                src={`${PF}${user.profilePicture || "/person/no-avatar.png"}`}
                 alt=""
               />
             </div>
