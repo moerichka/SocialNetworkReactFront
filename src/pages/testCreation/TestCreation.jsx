@@ -13,7 +13,6 @@ import Testnav from "../../components/testnav/Testnav";
 function TestCreation() {
   const { user } = useContext(UserContext);
   const [formData, setFormData] = useState([]);
-  console.log("formData: ", formData);
   const descData = useRef(null);
   const [isDataSended, setIsDataSended] = useState(false);
 

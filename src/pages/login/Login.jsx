@@ -1,9 +1,7 @@
-import { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import "./login.css";
 import { loginCall } from "../../apiCalls";
 
-import { Link } from "react-router-dom";
-import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
 import CircularProgress from "@mui/material/CircularProgress";
@@ -20,8 +18,6 @@ function Login() {
       dispatch
     );
   };
-
-  console.log(user);
 
   return (
     <div className="login">
