@@ -1,0 +1,10 @@
+.feed__container{
+
+}
+
+.feed__wrapper{
+    padding: 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}

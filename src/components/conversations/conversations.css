@@ -1,0 +1,23 @@
+.conversations{
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    gap: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 90%;
+}
+
+.conversations:hover{
+    background-color: var(--bg-color-second);
+}
+
+.conversations__img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.conversations__name{
+    font-weight: 500;
+}

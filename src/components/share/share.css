@@ -1,0 +1,86 @@
+.share{
+    width: 100%;
+    /* max-height: 11rem; */
+    border-radius: 0.8rem;
+    border: 2px solid var(--bg-color);
+    /* box-shadow: 0px 0px 15px 1px var(--bg-color-trans); */
+}
+
+.share__hr{
+    background-color: var(--bg-color);
+    height: 2px;
+    margin: 1.5rem 0;
+}
+
+.share__wrapper{
+    padding: 1rem;
+}
+
+.share__top{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share__profileImage{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.share__input{
+    border: none;
+    background-color: transparent;
+    color: var(--color);
+    font-size: 1rem;
+    width: 80%;
+}
+
+.share__bottom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    padding-bottom: 0.8rem;
+}
+
+.share__option{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.share__fileInput{
+    display: none;
+}
+
+.share__button{
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--bg-color);
+    background-color: transparent;
+    color: var(--color);
+}
+
+.share__imageContainer{
+    position: relative;
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.share__imageCancel{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem !important;
+}
+
+.share__image{
+    max-width: 100%;
+}
